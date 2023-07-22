@@ -3,7 +3,7 @@
 
 <!-- content -->
 <div id="content" class="m_one m_404">
-    <div class="inner">
+    <div class="l-inner">
 
         <!-- primary -->
         <main id="primary">
@@ -19,10 +19,6 @@
             </div><!-- /entry-404 -->
 
         </main><!-- /primary -->
-
-        <?php get_sidebar(); ?>
-
-
     </div><!-- /inner -->
 </div><!-- /content -->
 

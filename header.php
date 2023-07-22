@@ -37,3 +37,65 @@
     gtag('config', 'G-7NN16CS0JC');
     </script>
 </head>
+
+<body>
+    <!-- header -->
+    <header id="top" class="p-header">
+        <div class="p-header__wrap">
+            <div class="p-header__logo">
+                <h1>
+                    <a href="#top" class="p-header__logo--link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-logo01.png" alt="logo">
+                    </a>
+                </h1>
+            </div>
+            <?php if (is_front_page()) : ?>
+            <nav class="p-header__nav">
+                <ul class="p-header__nav__ul">
+                    <li class="p-header__nav__li"><a href="#top" class="p-header__nav--link">Top</a></li>
+                    <li class="p-header__nav__li u-header__nav--space">／</li>
+                    <li class="p-header__nav__li"><a href="#about" class="p-header__nav--link">About me</a></li>
+                    <li class="p-header__nav__li u-header__nav--space">／</li>
+                    <li class="p-header__nav__li"><a href="#portfolio" class="p-header__nav--link">Portfolio</a></li>
+                    <li class="p-header__nav__li u-header__nav--space">／</li>
+                    <li class="p-header__nav__li"><a href="#strong" class="p-header__nav--link">Strong</a></li>
+                    <li class="p-header__nav__li u-header__nav--space">／</li>
+                    <li class="p-header__nav__li"><a href="#service" class="p-header__nav--link">Service</a></li>
+                </ul>
+            </nav>
+            <div class="p-header__buttons">
+                <div class="p-header__button__contact">
+                    <a href="<?php echo home_url('/contact'); ?>" class="p-header__button__contact--link">Contact</a>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+        <?php if (is_front_page()) : ?>
+        <div class="p-header__hamburgericon">
+            <div class="p-header__hamburgericon__bars">
+                <div class="p-header__hamburgericon__bar1"></div>
+                <div class="p-header__hamburgericon__bar2"></div>
+                <div class="p-header__hamburgericon__bar3"></div>
+            </div>
+        </div>
+        <?php endif; ?>
+    </header>
+    <?php if (is_front_page()) : ?>
+    <div class="p-drawer">
+        <div class="p-drawer__background"></div>
+        <div class="p-drawer__menu">
+            <nav class="p-drawer__nav">
+                <ul class="p-drawer__nav__ul">
+                    <li class="p-drawer__nav__li"><a href="#top" class="p-drawer__nav--link">Top</a></li>
+                    <li class="p-drawer__nav__li"><a href="#about" class="p-drawer__nav--link">About me</a></li>
+                    <li class="p-drawer__nav__li"><a href="#portfolio" class="p-drawer__nav--link">Portfolio</a></li>
+                    <li class="p-drawer__nav__li"><a href="#strong" class="p-drawer__nav--link">Strong</a></li>
+                    <li class="p-drawer__nav__li"><a href="#service" class="p-drawer__nav--link">Service</a></li>
+                </ul>
+            </nav>
+            <div class="p-drawer__button__contact">
+                <a href="<?php echo home_url('/contact'); ?>" class="p-drawer__button__contact--link">Contact</a>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
