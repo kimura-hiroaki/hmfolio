@@ -1,0 +1,24 @@
+@use "../global" as global;
+
+.c-section__title {
+    font-family: global.$ff-en;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    border-left: 3px solid global.$main-color;
+    padding-left: 1rem;
+
+    @include global.mq(tab) {
+        font-size: 48px;
+    }
+
+    &--main {
+        span {
+            color: global.$main-color;
+        }
+    }
+
+    &--sub {
+        font-size: 18px;
+    }
+}

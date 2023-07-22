@@ -1,0 +1,71 @@
+@use "../global" as global;
+
+.p-work {
+    background-color: #EEFFFF;
+
+    &__card {
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 20px 20px 60px #cad9d9,
+            -20px -20px 60px #ffffff;
+        padding: 1rem;
+
+        @include global.mq(sp) {
+            margin-top: 2rem;
+        }
+
+        &__wrap {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, calc(100% * 320 / 1100));
+            grid-template-rows: 1fr;
+            column-gap: calc(100% * 70 / 1100);
+            row-gap: 70px;
+
+            @include global.mq(tab) {
+                grid-template-columns: repeat(2, calc(100% * 259 / 588));
+                grid-template-rows: 1fr 1fr;
+                column-gap: calc(100% * 70 / 588);
+            }
+
+            @include global.mq(sp) {
+                display: block;
+                margin-top: 0;
+            }
+        }
+
+        &__image {
+            width: 100%;
+        }
+    }
+
+    &__body {
+        margin-top: 1rem;
+        @include global.font(16, 24, 0, 500);
+    }
+
+    &__info-item {
+        display: flex;
+
+        dt {
+            width: 75px;
+        }
+
+        dd {
+            width: calc(100% - 75px);
+        }
+    }
+
+    &__note {
+        @include global.font(16, 24, 0, 500);
+
+        span {
+            font-weight: 700;
+            color: global.$accent-color-blue;
+        }
+
+        &__wrapper {
+            margin-top: 2rem;
+        }
+    }
+}

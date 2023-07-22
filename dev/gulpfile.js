@@ -27,11 +27,12 @@ function compileSass() {
 
 function watch() {
 	gulp.watch("../assets/sass/**/*.scss", gulp.series(compileSass));    //順番に
-	gulp.watch("../assets/js/**/*.js", gulp.series(minJS));
+	gulp.watch("./js/**/*.js", gulp.series(minJS));
 }
 
 function minJS() {
-	return gulp.src("../assets/js/**/*.js")
+	return gulp.src("./js/**/*.js")
+		.pipe(gulp.dest("../assets/js"))
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: ".min"

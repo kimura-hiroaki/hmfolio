@@ -1,0 +1,108 @@
+@use "../global" as global;
+
+.p-topview {
+    position: relative;
+
+    &__bgimage {
+        width: 100%;
+        padding-top: calc(100% * 500 / 1500);
+        background: url(../img/mainview.png) no-repeat center center / contain;
+
+        @include global.mq(sp) {
+            padding-top: 0;
+            height: 100vh;
+            background: url(../img/mainview_sp.png) no-repeat center center / cover;
+        }
+
+    }
+
+    &__image {
+        position: absolute;
+        width: 18%;
+        height: 18%;
+        top: 35%;
+        right: 15%;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        @include global.mq(sp) {
+            display: none;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 55%;
+        left: 15vw;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        @include global.mq(sp) {
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    &__title {
+        font-family: global.$ff-en;
+        color: #FFFFFF;
+
+        &--sub {
+            font-size: clamp(1rem, 1.3vw, 3rem);
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        &--main {
+            h2 {
+                // @include global.font(40, 60, 0, 700);
+                font-size: clamp(1rem, 3.125vw, 4rem);
+                line-height: 1.5;
+                font-weight: 700;
+                font-style: italic;
+
+                @include global.mq(sp) {
+                    line-height: 1.0;
+                    font-size: clamp(1rem, 6vw, 4rem);
+                }
+
+                span {
+                    // @include global.font(72, 90, 0, 700);
+                    font-size: clamp(2rem, 5.625vw, 6rem);
+
+                    @include global.mq(sp) {
+                        line-height: 1.2;
+                        font-size: clamp(2rem, 10vw, 8rem);
+                    }
+                }
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 2rem;
+
+        @include global.mq(sp) {
+            text-align: center;
+        }
+
+        a {
+            text-align: center;
+            display: inline-block;
+            width: 300px;
+            height: 36px;
+            @include global.font(18, 36, 0, 700);
+            background: yellow;
+            border: #FFFFFF 2px solid;
+            border-radius: 20px;
+            box-shadow: 0 5px 0 rgba(#2276A6, 0.5);
+            transition: 0.3s;
+
+            &:hover {
+                transform: translateY(3px);
+                box-shadow: 0 1px 0 rgba(#2276A6, 0.8);
+            }
+        }
+    }
+}

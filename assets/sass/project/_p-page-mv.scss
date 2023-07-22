@@ -1,0 +1,49 @@
+@use "../global" as global;
+
+.p-page-mv {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background: url(../img/mainview.png) no-repeat center center / cover;
+
+    &__title {
+        position: absolute;
+        top: 28%;
+        left: 17.2%;
+
+        @include global.mq(sp) {
+            top: 36%;
+            left: 15%;
+        }
+
+        &__main {
+            @include global.font(60, 72, 0, 700);
+            font-family: global.$ff-en;
+            font-style: italic;
+            color: #FFFFFF;
+
+            @include global.mq(sp) {
+                @include global.font(48, 57, 0, 700);
+            }
+
+            p {
+                display: inline-block;
+            }
+        }
+
+        &__sub {
+            margin-top: 9px;
+            @include global.font(20, 29, 0, 700);
+            color: #FFFFFF;
+
+            @include global.mq(sp) {
+                margin-top: 8px;
+                @include global.font(16, 24, 0, 700);
+            }
+
+            p {
+                display: inline-block;
+            }
+        }
+    }
+}

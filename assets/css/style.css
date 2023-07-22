@@ -202,6 +202,7 @@ a {
 	height: 5vw;
 	border-radius: 50%;
 	background-color: #fff;
+	opacity: 0;
 }
 
 .c-loader-dot--1 {
@@ -735,10 +736,10 @@ a {
 }
 
 .p-strong__accordion__text {
-	display: none;
+	display: block;
 	padding: 0.66rem;
 	padding-left: 2rem;
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 1rem;
 	line-height: 1.7777777778;
 	letter-spacing: 0em;
@@ -886,7 +887,6 @@ a {
 }
 
 .p-contact--inner {
-	width: 54.6875%;
 	min-width: 335px;
 	max-width: 700px;
 	margin-right: auto;
@@ -920,7 +920,103 @@ a {
 	font-size: 18px;
 }
 
+.p-contact__form {
+	width: 700px;
+	max-width: 100%;
+	margin-top: 3rem;
+	text-align: left;
+}
+
+.p-contact__form dl {
+	margin-top: 1rem;
+}
+
+.p-contact__form dl dt {
+	display: block;
+}
+
+.p-contact__form dl dd {
+	display: block;
+}
+
+.p-contact__form dl dd [type=text],
+.p-contact__form dl dd [type=email] {
+	width: 300px;
+	max-width: 100%;
+	padding: 0.5rem 0px 0.5rem 1rem;
+	border: 1px solid #AAAAAA;
+}
+
+.p-contact__form dl dd [type=text]::-moz-placeholder,
+.p-contact__form dl dd [type=email]::-moz-placeholder {
+	color: #CCCCCC;
+}
+
+.p-contact__form dl dd [type=text]::placeholder,
+.p-contact__form dl dd [type=email]::placeholder {
+	color: #CCCCCC;
+}
+
+.p-contact__form dl dd [type=text]:hover,
+.p-contact__form dl dd [type=text]:active,
+.p-contact__form dl dd [type=text]:focus,
+.p-contact__form dl dd [type=text]:focus-visible,
+.p-contact__form dl dd [type=email]:hover,
+.p-contact__form dl dd [type=email]:active,
+.p-contact__form dl dd [type=email]:focus,
+.p-contact__form dl dd [type=email]:focus-visible {
+	border: 1px solid #3B69FF;
+	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
+}
+
+.p-contact__form dl textarea {
+	width: 100%;
+	height: 240px;
+	padding: 9px 0px 9px 16px;
+	border: 1px solid #AAAAAA;
+	resize: vertical;
+}
+
+.p-contact__form dl textarea::-moz-placeholder {
+	color: #CCCCCC;
+}
+
+.p-contact__form dl textarea::placeholder {
+	color: #CCCCCC;
+}
+
+.p-contact__form dl textarea:hover,
+.p-contact__form dl textarea:active,
+.p-contact__form dl textarea:focus,
+.p-contact__form dl textarea:focus-visible {
+	border: 1px solid #3B69FF;
+	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
+}
+
+.p-contact__form .is_reqired span {
+	position: relative;
+}
+
+.p-contact__form .is_reqired span::after {
+	position: absolute;
+	top: 50%;
+	right: -44px;
+	width: 36px;
+	height: 18px;
+	transform: translateY(-50%);
+	border-radius: 2px;
+	background: #E61264;
+	content: "必須";
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 0.5555555556rem;
+	line-height: 1.8;
+	letter-spacing: 0em;
+	text-align: center;
+}
+
 .p-contact__message {
+	display: none;
 	font-weight: 500;
 	font-size: 0.7777777778rem;
 	line-height: 1.7142857143;
@@ -937,308 +1033,15 @@ a {
 	text-decoration: underline;
 }
 
-.contact_form {
-	width: 100%;
-	margin-top: 60px;
+.p-contact__policy {
+	margin-top: 2rem;
 }
 
-.contact_box {
-	align-items: center;
-}
-
-.contact_box:not(:first-child) {
-	margin-top: 32px;
-}
-
-.contact_box_label {
-	width: 100%;
-	font-weight: 700;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-}
-
-.contact_box_label .is_reqired {
-	position: relative;
-}
-
-.contact_box_label .is_reqired::after {
-	position: absolute;
-	top: 50%;
-	right: -44px;
-	width: 36px;
-	height: 18px;
-	transform: translateY(-50%);
-	border-radius: 2px;
-	background: #E61264;
-	content: "必須";
-	color: #FFFFFF;
-	font-weight: 700;
-	font-size: 0.5555555556rem;
-	line-height: 1.8;
-	letter-spacing: 0em;
-	text-align: center;
-}
-
-.contact_box_text {
-	width: 100%;
-	height: 44px;
-	margin-top: 12px;
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	background: #FFFFFF;
-	font-weight: 500;
-	font-size: 0.8888888889rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-}
-
-.contact_box_text [type=text],
-.contact_box_text [type=tel] {
-	width: 100%;
-	padding: 7px 0px 11px 16px;
-}
-
-.contact_box_text [type=text]::-moz-placeholder,
-.contact_box_text [type=tel]::-moz-placeholder {
-	color: #CCCCCC;
-}
-
-.contact_box_text [type=text]::placeholder,
-.contact_box_text [type=tel]::placeholder {
-	color: #CCCCCC;
-}
-
-.contact_box_text [type=text]:hover,
-.contact_box_text [type=text]:active,
-.contact_box_text [type=text]:focus,
-.contact_box_text [type=text]:focus-visible,
-.contact_box_text [type=tel]:hover,
-.contact_box_text [type=tel]:active,
-.contact_box_text [type=tel]:focus,
-.contact_box_text [type=tel]:focus-visible {
-	border: 1px solid #3B69FF;
-	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
-}
-
-.contact_box_text [type=email] {
-	width: 100%;
-	padding: 7px 0px 11px 16px;
-}
-
-.contact_box_text [type=email]::-moz-placeholder {
-	color: #CCCCCC;
-}
-
-.contact_box_text [type=email]::placeholder {
-	color: #CCCCCC;
-}
-
-.contact_box_text [type=email]:hover,
-.contact_box_text [type=email]:active,
-.contact_box_text [type=email]:focus,
-.contact_box_text [type=email]:focus-visible {
-	border: 1px solid #3B69FF;
-	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
-}
-
-.contact_box_select {
-	position: relative;
-	width: 100%;
-	height: 44px;
-	margin-top: 12px;
-	border: 1px solid #DDDDDD;
-	font-weight: 500;
-	font-size: 0.8888888889rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-}
-
-.contact_box_select select {
-	width: 100%;
-	padding: 9px 0px 9px 16px;
-}
-
-.contact_box_select select option {
-	color: #1A1A1A;
-}
-
-.contact_box_select select option:first-child {
-	color: #CCCCCC;
-}
-
-.contact_box_select:hover {
-	border: 1px solid #3B69FF;
-	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
-}
-
-.contact_box_select::after {
-	position: absolute;
-	top: 46%;
-	right: 15px;
-	width: 8px;
-	height: 8px;
-	transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 2px solid #1A1A1A;
-	border-left: 2px solid #1A1A1A;
-	content: "";
-}
-
-.contact_textareabox {
-	width: 100%;
-	margin-top: 32px;
-}
-
-.contact_textareabox_label {
-	width: 128px;
-	font-weight: 700;
-	font-size: 1rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-}
-
-.contact_textareabox_label .is_reqired {
-	position: relative;
-}
-
-.contact_textareabox_label .is_reqired::after {
-	position: absolute;
-	top: 50%;
-	right: -44px;
-	width: 36px;
-	height: 18px;
-	transform: translateY(-50%);
-	border-radius: 2px;
-	background: #E61264;
-	content: "必須";
-	color: #FFFFFF;
-	font-weight: 700;
-	font-size: 0.5555555556rem;
-	line-height: 1.8;
-	letter-spacing: 0em;
-	text-align: center;
-}
-
-.contact_textareabox_text {
-	margin-top: 12px;
-	font-weight: 500;
-	font-size: 0.8888888889rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-}
-
-.contact_textareabox_text textarea {
-	width: 100%;
-	height: 240px;
-	padding: 9px 0px 9px 16px;
-	border: 1px solid #DDDDDD;
-	resize: vertical;
-}
-
-.contact_textareabox_text textarea::-moz-placeholder {
-	color: #CCCCCC;
-}
-
-.contact_textareabox_text textarea::placeholder {
-	color: #CCCCCC;
-}
-
-.contact_textareabox_text textarea:hover,
-.contact_textareabox_text textarea:active,
-.contact_textareabox_text textarea:focus,
-.contact_textareabox_text textarea:focus-visible {
-	border: 1px solid #3B69FF;
-	box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
-}
-
-.contact_policy {
-	margin-top: 42px;
-	text-align: center;
-}
-
-.contact_policy_label {
-	position: relative;
-	padding-left: 42px;
-	font-weight: 500;
-	font-size: 0.8888888889rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-	vertical-align: middle; /*
-              span {
-                  display: inline-block;
-                  position: absolute;
-                  top: 50%;
-                  left: 0;
-                  width: 32px;
-                  height: 32px;
-                  transform: translateY(-50%);
-                  background: #FFF;
-                  border: 1px solid global.$text-color;
-
-                  @include global.mq(sp) {
-                      width: 28px;
-                      height: 28px;
-                  }
-
-                  &::after {
-                      content: "";
-                      position: absolute;
-                      top: 3px;
-                      left: 3px;
-                      width: 24px;
-                      height: 12px;
-                      border-left: 2px solid global.$text-color;
-                      border-bottom: 2px solid global.$text-color;
-                      transform: rotate(-45deg);
-                      opacity: 0;
-
-                      @include global.mq(sp) {
-                          width: 20px;
-                          height: 10px;
-                      }
-                  }
-              }
-  */ /*
-  &:hover {
-      span {
-          border: 1px solid #3B69FF;
-          box-shadow: 0 0 5px rgba(73, 115, 255, 0.2);
-      }
-  }
-
-  &:active {
-      span {
-          border: 1px solid #3B69FF;
-          background: #4973FF33;
-      }
-  }
-  */
-}
-
-.contact_policy_label_input {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-}
-
-.contact_policy_label a {
-	font-weight: 700;
-	font-size: 0.8888888889rem;
-	line-height: 1.5;
-	letter-spacing: 0em;
-	text-decoration: underline;
-}
-
-.contact_policy [type=checkbox]:checked + span::after {
-	opacity: 1;
-}
-
-.contact_submit {
+.p-contact__submit {
 	margin-top: 40px;
 }
 
-.contact_submit [type=submit] {
+.p-contact__submit [type=submit] {
 	display: block;
 	width: 336px;
 	max-width: 100%;
@@ -1255,10 +1058,101 @@ a {
 	cursor: pointer;
 }
 
-.contact_submit [type=submit]:hover {
+.p-contact__submit [type=submit]:hover {
 	border: 1px solid #38B6FF;
 	background: #38B6FF;
 	color: #FFFFFF;
+}
+
+.mwform-checkbox-field {
+	position: relative;
+}
+
+.mwform-checkbox-field:not(:first-child) {
+	margin-left: 1.5rem;
+}
+
+.mwform-checkbox-field-text {
+	padding-left: 1.5rem;
+}
+
+.mwform-checkbox-field-text::before {
+	position: absolute;
+	top: 12px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+	transform: translateY(-50%);
+	border: 1px solid #1A1A1A;
+	background: #FFF;
+	content: "";
+}
+
+.mwform-checkbox-field-text::after {
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	width: 24px;
+	height: 12px;
+	transform: rotate(-45deg);
+	border-bottom: 2px solid #1A1A1A;
+	border-left: 2px solid #1A1A1A;
+	content: "";
+	opacity: 0;
+}
+
+[type=checkbox]:checked + span::after {
+	opacity: 1;
+}
+
+label[for=your-question-1],
+label[for=your-question-2],
+label[for=your-question-3],
+label[for=your-question-4],
+label[for=your-question-5] {
+	font-weight: 500;
+	font-size: 0.8888888889rem;
+	line-height: 1.5;
+	letter-spacing: 0em;
+}
+
+label[for=your-question-1] .mwform-checkbox-field-text,
+label[for=your-question-2] .mwform-checkbox-field-text,
+label[for=your-question-3] .mwform-checkbox-field-text,
+label[for=your-question-4] .mwform-checkbox-field-text,
+label[for=your-question-5] .mwform-checkbox-field-text {
+	padding-left: 1rem;
+}
+
+label[for=your-question-1] .mwform-checkbox-field-text::before,
+label[for=your-question-2] .mwform-checkbox-field-text::before,
+label[for=your-question-3] .mwform-checkbox-field-text::before,
+label[for=your-question-4] .mwform-checkbox-field-text::before,
+label[for=your-question-5] .mwform-checkbox-field-text::before {
+	top: 12px;
+	left: 0px;
+	width: 24px;
+	height: 24px;
+	transform: translateY(-50%);
+	border: 1px solid #1A1A1A;
+	background: #FFF;
+}
+
+label[for=your-question-1] .mwform-checkbox-field-text::after,
+label[for=your-question-2] .mwform-checkbox-field-text::after,
+label[for=your-question-3] .mwform-checkbox-field-text::after,
+label[for=your-question-4] .mwform-checkbox-field-text::after,
+label[for=your-question-5] .mwform-checkbox-field-text::after {
+	position: absolute;
+	top: 3px;
+	left: 4px;
+	width: 20px;
+	height: 10px;
+	transform: rotate(-45deg);
+	border-bottom: 2px solid #1A1A1A;
+	border-left: 2px solid #1A1A1A;
+	content: "";
+	opacity: 0;
 }
 
 .p-page-mv {
@@ -1483,7 +1377,7 @@ a {
 }
 
 .p-strong__accordion__text {
-	font-weight: 500;
+	font-weight: 700;
 	font-size: 0.8888888889rem;
 	line-height: 1.6875;
 	letter-spacing: 0em;
@@ -1542,118 +1436,43 @@ a {
 	letter-spacing: 0em;
 }
 
-.contact_form {
-	margin-top: 40px;
+.p-contact__form dl dd [type=text],
+.p-contact__form dl dd [type=email] {
+	padding: 11px 0px 11px 16px;
 }
 
-.contact_box:not(:first-child) {
-	margin-top: 21px;
+.p-contact__form dl textarea {
+	padding: 11px 0px 11px 16px;
 }
 
-.contact_box {
-	display: block;
+.p-contact__form dl textarea {
+	height: 160px;
 }
 
-.contact_box_label {
-	font-weight: 700;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_box_label .is_reqired::after {
+.p-contact__form .is_reqired span::after {
 	top: 51%;
 	right: -60px;
 }
 
-.contact_box_text {
-	margin-top: 8px;
-	font-weight: 500;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_box_text [type=text],
-.contact_box_text [type=tel] {
-	padding: 11px 0px 11px 16px;
-}
-
-.contact_box_text [type=email] {
-	padding: 11px 0px 11px 16px;
-}
-
-.contact_box_select {
-	margin-top: 8px;
-	font-weight: 500;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_box_select {
-	width: 100%;
-	height: 38px;
-	margin-top: 6px;
-	margin-left: 0;
-	font-size: 14px;
-}
-
-.contact_textareabox {
-	margin-top: 21px;
-}
-
-.contact_textareabox_label {
-	font-weight: 700;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_textareabox_text {
-	margin-top: 8px;
-	font-weight: 500;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_textareabox_text textarea {
-	padding: 11px 0px 11px 16px;
-}
-
-.contact_textareabox_text textarea {
-	height: 160px;
-}
-
-.contact_policy {
-	margin-top: 42px;
-}
-
-.contact_policy_label {
-	padding-left: 38px;
-	font-weight: 500;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_policy_label a {
-	font-weight: 700;
-	font-size: 0.7777777778rem;
-	line-height: 1.4285714286;
-	letter-spacing: 0em;
-}
-
-.contact_submit {
+.p-contact__submit {
 	margin-top: 29px;
 }
 
-.contact_submit [type=submit] {
+.p-contact__submit [type=submit] {
 	font-weight: 500;
 	font-size: 0.7777777778rem;
 	line-height: 5.1428571429;
 	letter-spacing: 0em;
+}
+
+.mwform-checkbox-field-text::before {
+	width: 28px;
+	height: 28px;
+}
+
+.mwform-checkbox-field-text::after {
+	width: 20px;
+	height: 10px;
 }
 
 .p-page-mv__title {

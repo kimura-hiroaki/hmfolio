@@ -1,0 +1,188 @@
+@use "../global" as global;
+
+.p-header {
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    position: relative;
+
+    @include global.mq(tab) {
+        height: 60px;
+    }
+
+
+
+    &__wrap {
+        height: inherit;
+        align-items: center;
+        padding-left: 16px;
+        padding-right: 16px;
+        display: flex;
+
+        @include global.mq(tab) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__logo {
+        margin-right: auto;
+        width: 282px;
+
+        @include global.mq(tab) {
+            width: 198px;
+        }
+    }
+
+    &__nav {
+        margin: auto;
+        margin-right: 2rem;
+
+        @include global.mq(tab) {
+            display: none;
+        }
+
+        &__ul {
+            display: flex;
+        }
+
+        &__li {
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+        }
+
+        &--link {
+            font-size: 14px;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: global.$main-color;
+                transition: all 0.3s ease;
+            }
+        }
+
+        &--link:hover {
+            &::after {
+                width: 100%;
+                height: 1px;
+                background: global.$main-color;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+
+        @include global.mq(tab) {
+            display: none;
+        }
+    }
+
+    &__button {
+        &__contact {
+            margin-left: calc(1rem * 10 / 16);
+            width: 176px;
+            height: 68px;
+            text-align: center;
+
+            &--link {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 700;
+                width: 100%;
+                height: 100%;
+                line-height: 68px;
+                color: #FFFFFF;
+                border: 1px solid global.$main-color;
+                background-color: global.$main-color;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    border: 1px solid global.$main-color;
+                    background-color: #FFFFFF;
+                    color: global.$main-color;
+                }
+            }
+        }
+    }
+
+    &__hamburgericon {
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        width: 27px;
+        height: 15.75px;
+        z-index: 50;
+        display: none;
+
+        @include global.mq(tab) {
+            display: block;
+        }
+
+        &__bars {
+            width: inherit;
+            height: inherit;
+            position: relative;
+        }
+
+        &__bar1,
+        &__bar2,
+        &__bar3 {
+            position: absolute;
+            width: 27px;
+            height: 2.25px;
+            left: 0;
+            background: global.$main-color;
+        }
+
+        &__bar1 {
+            top: 0;
+        }
+
+        &__bar2 {
+            top: 6.75px;
+        }
+
+        &__bar3 {
+            top: 13.5px;
+        }
+
+        &.is-active {
+            position: fixed;
+
+            .p-header__hamburgericon__bar1,
+            .p-header__hamburgericon__bar2,
+            .p-header__hamburgericon__bar3 {
+                transition: transform 1s ease 0s;
+            }
+
+            .p-header__hamburgericon__bar1 {
+                top: 50%;
+                transform: rotateZ(45deg);
+            }
+
+            .p-header__hamburgericon__bar2 {
+                display: none;
+            }
+
+            .p-header__hamburgericon__bar3 {
+                top: 50%;
+                transform: rotateZ(-45deg);
+            }
+        }
+    }
+
+    &.is-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 40;
+    }
+}

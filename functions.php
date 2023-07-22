@@ -26,18 +26,19 @@ add_action("after_setup_theme", "my_setup");
 function my_script_init()
 {
     wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", array(), "5.8.2", "all");
-    wp_enqueue_style("my", get_template_directory_uri() . "/css/style.min.css", array(), filemtime(get_theme_file_path("css/style.min.css")), "all");
+    wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js", array(), "3.11.1", false);
+    wp_enqueue_script("ScrollTrigger", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js", array(), "3.11.1", false);
+    wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.min.css", array(), filemtime(get_theme_file_path("assets/css/style.min.css")), "all");
     // if (is_single()) :
     // wp_enqueue_script("my", get_template_directory_uri() . "/js/sns.js", array("jquery"), filemtime(get_theme_file_path("js/script.js")), true);
     // endif;
     // swiper(cssとバージョンを揃える)
     wp_enqueue_script("swiper", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js", array(), "8.4.7", true);
-    wp_enqueue_script("drawer", get_template_directory_uri() . "/js/drawer.min.js", array("jquery"), filemtime(get_theme_file_path("js/drawer.js")), true);
-    wp_enqueue_script("slider", get_template_directory_uri() . "/js/slider.min.js", array("jquery"), filemtime(get_theme_file_path("js/slider.js")), true);
-    wp_enqueue_script("scroll", get_template_directory_uri() . "/js/scroll.min.js", array("jquery"), filemtime(get_theme_file_path("js/scroll.js")), true);
-    wp_enqueue_script("accord", get_template_directory_uri() . "/js/accord.min.js", array("jquery"), filemtime(get_theme_file_path("js/accord.js")), true);
-    wp_enqueue_script("form", get_template_directory_uri() . "/js/form.min.js", array("jquery"), filemtime(get_theme_file_path("js/form.js")), true);
-    wp_enqueue_script("get_windowsize", get_template_directory_uri() . "/js/get_windowsize.min.js", array(), filemtime(get_theme_file_path("js/get_windowsize.js")), false);
+    wp_enqueue_script("drawer", get_template_directory_uri() . "/assets/js/drawer.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/drawer.js")), true);
+    wp_enqueue_script("scroll", get_template_directory_uri() . "/assets/js/scroll.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/scroll.js")), true);
+    wp_enqueue_script("accord", get_template_directory_uri() . "/assets/js/accord.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/accord.js")), true);
+    wp_enqueue_script("form", get_template_directory_uri() . "/assets/js/form.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/form.js")), true);
+    wp_enqueue_script("loading", get_template_directory_uri() . "/assets/js/loading.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/loading.js")), true);
 }
 add_action("wp_enqueue_scripts", "my_script_init");
 
@@ -153,6 +154,14 @@ function my_searchform_shortcode($attrs, $content = '')
 
 add_shortcode('search_form', 'my_searchform_shortcode');
 
+add_filter('upload_mimes', 'custom_upload_mimes');
+
+function custom_upload_mimes($existing_mimes = array())
+{
+    $existing_mimes['ico'] = 'images/ico';
+    return $existing_mimes;
+}
+/*
 // Breacrumb navXT のトップページの表記を書き換える
 add_filter('bcn_breadcrumb_title', 'nskw_bcn_breadcrumb_title_filter', 10, 2);
 function nskw_bcn_breadcrumb_title_filter($title, $type = null)
@@ -190,3 +199,4 @@ function init_sessions()
     }
 }
 add_action('init', 'init_sessions');
+*/

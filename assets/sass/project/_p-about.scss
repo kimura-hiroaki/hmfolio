@@ -1,0 +1,102 @@
+@use "../global" as global;
+
+.p-about {
+    &__content {
+        padding: 1rem;
+        width: 70%;
+
+        @include global.mq(sp) {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__wrap {
+            display: flex;
+            margin-top: 1.5rem;
+
+            @include global.mq(sp) {
+                display: block;
+            }
+        }
+
+        order: 1;
+
+        &__name {
+            @include global.font(24, 36, 0, 700);
+        }
+
+        &__introduction {
+            margin-top: 20px;
+            padding-left: 0.5rem;
+        }
+
+        &__info {
+            display: inline-block;
+            margin-top: 1rem;
+            border-radius: 50px;
+            background: #ffffff;
+            box-shadow: inset 20px 20px 60px #d9d9d9,
+                inset -20px -20px 60px #ffffff;
+            padding: 2rem;
+
+            @include global.mq(sp) {
+                padding: 1rem;
+                text-align: left;
+            }
+
+            &__title {
+                font-weight: 700;
+            }
+
+            &__text {
+                margin-top: 0.5rem;
+                padding-left: 0.5rem;
+                @include global.font(16, 28, 0, 500);
+            }
+        }
+
+        &__lisence {
+            margin-top: 1rem;
+
+            &__table--item {
+                display: flex;
+
+                @include global.mq(sp) {
+                    display: block;
+
+                    &:not(:first-child) {
+                        margin-top: 1rem;
+                    }
+                }
+
+                dt {
+                    width: 70px;
+
+                    @include global.mq(sp) {
+                        width: 100%;
+                    }
+                }
+
+                dd {
+                    width: calc(100% - 70px);
+
+                    @include global.mq(sp) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        order: 2;
+        width: 25%;
+
+        @include global.mq(sp) {
+            width: 500px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

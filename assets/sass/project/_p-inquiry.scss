@@ -1,0 +1,70 @@
+@use "../global" as global;
+
+.p-inquiry {
+    text-align: center;
+
+    &__title {
+        display: inline-block;
+        font-family: global.$ff-en;
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 1;
+        border-bottom: 3px solid global.$main-color;
+        padding-bottom: 1rem;
+
+        @include global.mq(tab) {
+            font-size: 48px;
+        }
+
+        &--main {
+            span {
+                color: global.$main-color;
+            }
+        }
+
+        &--sub {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        margin-top: 3rem;
+    }
+
+    &__icon {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+
+        @include global.mq(sp) {
+            display: block;
+        }
+    }
+
+    &__image {
+        margin-top: 2rem;
+        fill: #1E3550;
+        font-size: 120px;
+
+        i {
+            transition: all 1s ease;
+        }
+
+        a:hover {
+            i {
+                transform: rotateZ(360deg);
+            }
+        }
+    }
+
+    &__twitter {
+        width: 300px;
+        height: 400px;
+        margin-left: 3rem;
+
+        @include global.mq(sp) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

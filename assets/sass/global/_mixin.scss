@@ -1,0 +1,32 @@
+@use "./variables" as global;
+
+// ---
+// メディアクエリー
+// ---
+@mixin mq($breakpoint: sp) {
+	@media #{map-get(global.$breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+
+// ---
+// font
+// ---
+@mixin font($size: null, $height: null, $space: null, $weight: null) {
+	@if $size {
+		font-size: calc($size / 18 * 1rem);
+	}
+
+	@if $height {
+		line-height: calc($height / $size);
+	}
+
+	@if $space {
+		letter-spacing: calc($space / 1000 * 1em);
+	}
+
+	@if $weight {
+		font-weight: $weight;
+	}
+}
