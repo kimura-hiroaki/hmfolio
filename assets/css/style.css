@@ -146,13 +146,6 @@ a {
 	margin-left: auto;
 }
 
-.l-inner-2culum {
-	width: 1100px;
-	max-width: calc(100% - 180px);
-	margin-right: auto;
-	margin-left: auto;
-}
-
 .l-section {
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -178,7 +171,7 @@ a {
 
 .c-loader-bg {
 	display: grid;
-	z-index: 100;
+	z-index: 300;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -343,7 +336,7 @@ a {
 
 .p-header__hamburgericon {
 	display: none;
-	z-index: 50;
+	z-index: 100;
 	position: absolute;
 	top: 22px;
 	right: 20px;
@@ -413,8 +406,8 @@ a {
 .p-drawer {
 	z-index: 40;
 	position: fixed;
-	top: -110%;
-	right: 0;
+	top: 60px;
+	right: -110%;
 	width: 100%;
 	height: 100vh;
 	background: url(../img/drawer_bg.jpg) no-repeat center right/cover;
@@ -423,6 +416,7 @@ a {
 
 .p-drawer.is-active {
 	top: 60px;
+	right: 0;
 }
 
 .p-drawer__nav {
@@ -431,11 +425,11 @@ a {
 }
 
 .p-drawer__nav__li:first-child {
-	margin-top: 60px;
+	margin-top: 3rem;
 }
 
 .p-drawer__nav__li:not(:first-child) {
-	margin-top: 40px;
+	margin-top: 1rem;
 }
 
 .p-drawer__nav--link {
@@ -452,7 +446,7 @@ a {
 .p-drawer__button__contact {
 	width: 295px;
 	height: 68px;
-	margin-top: 32px;
+	margin-top: 1rem;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -1016,7 +1010,6 @@ a {
 }
 
 .p-contact__message {
-	display: none;
 	font-weight: 500;
 	font-size: 0.7777777778rem;
 	line-height: 1.7142857143;
@@ -1037,15 +1030,26 @@ a {
 	margin-top: 2rem;
 }
 
-.p-contact__submit {
-	margin-top: 40px;
+.p-contact__policy a {
+	font-weight: 700;
+	text-decoration: underline;
 }
 
-.p-contact__submit [type=submit] {
+.p-contact__policy a:hover {
+	text-decoration: none;
+}
+
+.p-contact__submit {
+	display: flex;
+	justify-content: space-around;
+}
+
+.p-contact [type=submit] {
 	display: block;
 	width: 336px;
 	max-width: 100%;
 	height: 72px;
+	margin-top: 2rem;
 	margin-right: auto;
 	margin-left: auto;
 	border: 1px solid #38B6FF;
@@ -1056,9 +1060,10 @@ a {
 	line-height: 4.5;
 	letter-spacing: 0em;
 	cursor: pointer;
+	transition: all 0.3s ease;
 }
 
-.p-contact__submit [type=submit]:hover {
+.p-contact [type=submit]:hover {
 	border: 1px solid #38B6FF;
 	background: #38B6FF;
 	color: #FFFFFF;
@@ -1099,10 +1104,6 @@ a {
 	border-left: 2px solid #1A1A1A;
 	content: "";
 	opacity: 0;
-}
-
-[type=checkbox]:checked + span::after {
-	opacity: 1;
 }
 
 label[for=your-question-1],
@@ -1155,6 +1156,10 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 	opacity: 0;
 }
 
+[type=checkbox]:checked + span::after {
+	opacity: 1;
+}
+
 .p-page-mv {
 	position: relative;
 	width: 100%;
@@ -1195,6 +1200,33 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 	display: inline-block;
 }
 
+.p-privacy {
+	text-align: center;
+}
+
+.p-privacy--inner {
+	min-width: 335px;
+	max-width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 2rem;
+	border: 1px solid #1A1A1A;
+}
+
+.p-privacy h2 {
+	color: #E61264;
+	font-weight: 700;
+	font-size: 36px;
+	text-decoration: underline;
+}
+
+.p-privacy p {
+	margin-top: 3rem;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: left;
+}
+
 .u-isPC {
 	display: block;
 }
@@ -1215,10 +1247,6 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 
 .l-inner {
 	max-width: calc(100% - 100px);
-}
-
-.l-inner-2culum {
-	max-width: calc(100% - 40px);
 }
 
 .c-section__title {
@@ -1270,10 +1298,6 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 @media screen and (max-width: 767px) {
 
 .l-inner {
-	max-width: calc(100% - 40px);
-}
-
-.l-inner-2culum {
 	max-width: calc(100% - 40px);
 }
 
@@ -1455,10 +1479,10 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 }
 
 .p-contact__submit {
-	margin-top: 29px;
+	display: block;
 }
 
-.p-contact__submit [type=submit] {
+.p-contact [type=submit] {
 	font-weight: 500;
 	font-size: 0.7777777778rem;
 	line-height: 5.1428571429;
@@ -1493,6 +1517,18 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 	font-size: 0.8888888889rem;
 	line-height: 1.5;
 	letter-spacing: 0em;
+}
+
+.p-privacy--inner {
+	padding: 1rem;
+}
+
+.p-privacy h2 {
+	font-size: 18px;
+}
+
+.p-privacy p {
+	font-size: 16px;
 }
 
 .u-isPC {

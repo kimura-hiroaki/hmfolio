@@ -15,7 +15,7 @@
                     3日以内に担当者からメールにてご連絡いたします。
                 </div>
                 <div class="p-contact__form">
-                    <?php echo do_shortcode('[mwform_formkey key="12"]'); ?>
+                    <?php the_content(); ?>
                 </div>
             </div>
     </section>

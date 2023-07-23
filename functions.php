@@ -29,16 +29,16 @@ function my_script_init()
     wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js", array(), "3.11.1", false);
     wp_enqueue_script("ScrollTrigger", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js", array(), "3.11.1", false);
     wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.min.css", array(), filemtime(get_theme_file_path("assets/css/style.min.css")), "all");
-    // if (is_single()) :
-    // wp_enqueue_script("my", get_template_directory_uri() . "/js/sns.js", array("jquery"), filemtime(get_theme_file_path("js/script.js")), true);
-    // endif;
-    // swiper(cssとバージョンを揃える)
-    wp_enqueue_script("swiper", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js", array(), "8.4.7", true);
+    //wp_enqueue_script("swiper", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js", array(), "8.4.7", true);
     wp_enqueue_script("drawer", get_template_directory_uri() . "/assets/js/drawer.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/drawer.js")), true);
-    wp_enqueue_script("scroll", get_template_directory_uri() . "/assets/js/scroll.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/scroll.js")), true);
     wp_enqueue_script("accord", get_template_directory_uri() . "/assets/js/accord.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/accord.js")), true);
-    wp_enqueue_script("form", get_template_directory_uri() . "/assets/js/form.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/form.js")), true);
-    wp_enqueue_script("loading", get_template_directory_uri() . "/assets/js/loading.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/loading.js")), true);
+    if (is_page('contact')) {
+        wp_enqueue_script("form", get_template_directory_uri() . "/assets/js/form.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/form.js")), true);
+    }
+    if (is_front_page()) {
+        wp_enqueue_script("scroll", get_template_directory_uri() . "/assets/js/scroll.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/scroll.js")), true);
+        wp_enqueue_script("loading", get_template_directory_uri() . "/assets/js/loading.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/loading.js")), true);
+    }
 }
 add_action("wp_enqueue_scripts", "my_script_init");
 

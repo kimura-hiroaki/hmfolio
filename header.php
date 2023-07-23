@@ -10,9 +10,6 @@
 
     <!-- ogp -->
 
-    <!-- favicon -->
-    <link rel="icon" href="./assets/img/favicon.ico">
-
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +18,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <!-- title -->
-    <title>Top-HM-WebCoder</title>
+    <title><?php single_post_title(); ?>-HM-WebCoder</title>
     <!-- javascript css -->
     <?php wp_head(); ?>
     <!-- Google tag (gtag.js) -->
@@ -44,9 +41,13 @@
         <div class="p-header__wrap">
             <div class="p-header__logo">
                 <h1>
+                    <?php if (is_front_page()) : ?>
                     <a href="#top" class="p-header__logo--link">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-logo01.png" alt="logo">
-                    </a>
+                        <?php else : ?>
+                        <a href="<?php echo home_url('/'); ?>" class="p-header__logo--link">
+                            <?php endif; ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-logo01.png" alt="logo">
+                        </a>
                 </h1>
             </div>
             <?php if (is_front_page()) : ?>

@@ -1,0 +1,40 @@
+@use "../global" as global;
+
+.p-privacy {
+    text-align: center;
+
+    &--inner {
+        max-width: 700px;
+        min-width: 335px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        border: 1px solid global.$text-color;
+
+        @include global.mq(sp) {
+            padding: 1rem;
+        }
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: global.$accent-color-red;
+        text-decoration: underline;
+
+        @include global.mq(sp) {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        margin-top: 3rem;
+        text-align: left;
+        font-size: 18px;
+        font-weight: 700;
+
+        @include global.mq(sp) {
+            font-size: 16px;
+        }
+    }
+}

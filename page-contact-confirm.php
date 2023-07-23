@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: ContactConfirm
+*/
+?>
 <?php get_header(); ?>
 <main>
     <!-- contact -->
@@ -12,7 +17,7 @@
                 </div>
 
                 <div class="p-contact__form">
-                    <?php echo do_shortcode('[mwform_formkey key="12"]'); ?>
+                    <?php the_content(); ?>
                 </div>
             </div>
     </section>
