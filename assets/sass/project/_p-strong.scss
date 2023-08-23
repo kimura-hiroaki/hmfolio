@@ -1,6 +1,8 @@
 @use "../global" as global;
 
 .p-strong {
+    background-color: #ffffff;
+
     &__text {
         margin-top: 3rem;
     }

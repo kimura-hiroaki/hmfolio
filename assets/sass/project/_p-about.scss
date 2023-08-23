@@ -1,6 +1,22 @@
 @use "../global" as global;
 
 .p-about {
+    position: relative;
+    background-color: #ffffff;
+
+    &::after {
+        position: absolute;
+        content: "Coder";
+        bottom: -27rem;
+        left: 50%;
+        font-size: 300px;
+        font-weight: 700;
+        color: #ffffff;
+        -webkit-text-stroke: 5px #CCCCCC;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
     &__content {
         padding: 1rem;
         width: 70%;

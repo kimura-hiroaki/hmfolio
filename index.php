@@ -20,12 +20,12 @@
         <div class="p-topview__content">
             <div class="p-topview__title">
                 <div class="p-topview__title--sub">
-                    カタチニスル
+                    現役ソフトウェアエンジニア
                 </div>
                 <div class="p-topview__title--main">
                     <h2>
                         We Create Your Image<br>
-                        <span>HM-Web Corder</span>
+                        <span>HM-Web Coder</span>
                     </h2>
                 </div>
             </div>
@@ -36,8 +36,8 @@
         </a>
     </section>
     <!-- about me -->
-    <section id="about" class="l-section p-about js-fadein">
-        <div class="l-inner">
+    <section id="about" class="l-section p-about">
+        <div class="l-inner js-fadein">
             <div class="c-section__title p-about__title">
                 <div class="p-about__title--main">
                     <h2 class="c-section__title--main"><span>A</span>bout me</h2>
@@ -54,6 +54,8 @@
                         痒い所に手が届くコーダーを目指しています。<br>
                         そのために、align with you.（ お客様に寄り添う ）<br>
                         お客様に誠実に対応することが大切と考えています。<br>
+                        HM-WebとはHMは夫婦の頭文字を取ったものです。<br>
+                        家族のために頑張るという意味を込めて命名しています。<br>
                     </div>
                     <div class="p-about__content__info">
                         <div class="p-about__content__info__title">&lt; info &gt;</div>
@@ -80,8 +82,8 @@
         </div>
     </section>
     <!-- Portfolio -->
-    <section id="portfolio" class="l-section p-work js-fadein">
-        <div class="l-inner">
+    <section id="portfolio" class="l-section p-work">
+        <div class="l-inner js-fadein">
             <div class="c-section__title p-work__title">
                 <div class="p-work__title--main">
                     <h2 class="c-section__title--main"><span>P</span>ortfolio</h2>
@@ -195,8 +197,8 @@
         </div>
     </section>
     <!-- strong -->
-    <section id="strong" class="l-section p-strong js-fadein">
-        <div class="l-inner">
+    <section id="strong" class="l-section p-strong">
+        <div class="l-inner js-fadein">
             <div class="c-section__title p-strong__title">
                 <div class="p-strong__title--main">
                     <h2 class="c-section__title--main"><span>S</span>trong Point</h2>
@@ -211,7 +213,7 @@
                     </div>
                     <div class="p-strong__accordion__text">
                         本業で8年間 設計・開発業務、8年間 品質確認業務に携わってきました。<br>
-                        本業での経験が活かせると思っています。<br>
+                        本業での経験がコーダー業務でも活かせると思っています。<br>
                         また、チーム作業での、情報共有の必要性は重々承知しています。<br>
                         作業時は報・連・相による素早い情報共有を徹底します。
                     </div>
@@ -238,8 +240,8 @@
         </div>
     </section>
     <!-- service -->
-    <section id="service" class="l-section p-service js-fadein">
-        <div class="l-inner">
+    <section id="service" class="l-section p-service">
+        <div class="l-inner js-fadein">
             <div class="c-section__title p-service__title">
                 <div class="p-service__title--main">
                     <h2 class="c-section__title--main"><span>S</span>ervice</h2>
@@ -282,8 +284,8 @@
         </div>
     </section>
     <!-- inquiry -->
-    <section id="inquiry" class="l-section p-inquiry js-fadein">
-        <div class="l-inner">
+    <section id="inquiry" class="l-section p-inquiry">
+        <div class="l-inner js-fadein">
             <div class="p-inquiry__title">
                 <div class="p-inquiry__title--main">
                     <h2 class="c-section__title--main"><span>C</span>ontact</h2>
@@ -297,7 +299,10 @@
             <div class="p-inquiry__icon">
                 <div class="p-inquiry__image">
                     <a href="<?php echo home_url('/contact'); ?>">
-                        <i class="fa-regular fa-envelope"></i>
+                        <div>
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="p-inquiry__button">お問い合わせは<br>コチラ</div>
                     </a>
                 </div>
                 <div class="p-inquiry__twitter">

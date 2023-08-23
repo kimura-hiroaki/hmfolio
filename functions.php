@@ -25,7 +25,8 @@ add_action("after_setup_theme", "my_setup");
 
 function my_script_init()
 {
-    wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css", array(), "5.8.2", "all");
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Serif+JP:wght@500;700&display=swap', array(), null);
+    wp_enqueue_style("font-awesome", "https://use.fontawesome.com/releases/v6.0.0/css/all.css", array(), "6.0.0", "all");
     wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js", array(), "3.11.1", false);
     wp_enqueue_script("ScrollTrigger", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js", array(), "3.11.1", false);
     wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.min.css", array(), filemtime(get_theme_file_path("assets/css/style.min.css")), "all");

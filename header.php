@@ -9,14 +9,6 @@
     <meta name="description" content="HM-WebCorderのポートフォリオサイトです">
 
     <!-- ogp -->
-
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Serif+JP:wght@500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
     <!-- title -->
     <title><?php single_post_title(); ?>-HM-WebCoder</title>
     <!-- javascript css -->

@@ -19,7 +19,7 @@
                     </ul>
                 </nav>
             <?php endif; ?>
-            <div class="p-footer__copyright">©︎2023 HM-WebCorder. All Rights Reserved.</div>
+            <div class="p-footer__copyright">©︎2023 HM-WebCoder. All Rights Reserved.</div>
         </div>
         <div class="c-totop__button">
             <a href="#top" class="c-totop__button--link">

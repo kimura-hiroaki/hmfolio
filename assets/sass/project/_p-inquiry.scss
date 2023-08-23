@@ -2,6 +2,7 @@
 
 .p-inquiry {
     text-align: center;
+    background-color: #202f55;
 
     &__title {
         display: inline-block;
@@ -17,18 +18,22 @@
         }
 
         &--main {
+            color: #F5F5F5;
+
             span {
                 color: global.$main-color;
             }
         }
 
         &--sub {
+            color: #F5F5F5;
             font-size: 18px;
         }
     }
 
     &__text {
         margin-top: 3rem;
+        color: #F5F5F5;
     }
 
     &__icon {
@@ -42,19 +47,44 @@
     }
 
     &__image {
-        margin-top: 2rem;
-        fill: #1E3550;
-        font-size: 120px;
+        position: relative;
+        width: 375px;
+        max-width: 100%;
+
+        @include global.mq(sp) {
+            height: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        a {
+            display: block;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 1rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
 
         i {
+            fill: #1E3550;
+            font-size: 120px;
             transition: all 1s ease;
         }
+    }
 
-        a:hover {
-            i {
-                transform: rotateZ(360deg);
-            }
+
+    a:hover {
+        i {
+            transform: rotateZ(360deg);
         }
+    }
+
+    &__button {
+        font-size: 18px;
+        font-weight: 700;
     }
 
     &__twitter {
