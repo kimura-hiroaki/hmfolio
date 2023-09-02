@@ -2,7 +2,7 @@
     <footer class="p-footer">
         <div class="l-inner">
             <figure class="p-footer__logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/portfolio_logo2.png" alt="logo">
+                <?php echo get_image_html('/assets/img/portfolio_logo2.png', 'logo'); ?>
             </figure>
             <?php if (is_front_page()) : ?>
                 <nav class="p-footer__nav">
@@ -23,7 +23,7 @@
         </div>
         <div class="c-totop__button">
             <a href="#top" class="c-totop__button--link">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon-top.png" alt="totop">
+                <?php echo get_image_html('/assets/img/icon-top.png', 'totop'); ?>
             </a>
         </div>
     </footer>

@@ -27,8 +27,8 @@ function my_script_init()
 {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Serif+JP:wght@500;700&display=swap', array(), null);
     wp_enqueue_style("font-awesome", "https://use.fontawesome.com/releases/v6.0.0/css/all.css", array(), "6.0.0", "all");
-    wp_enqueue_script("gsap", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js", array(), "3.11.1", false);
-    wp_enqueue_script("ScrollTrigger", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js", array(), "3.11.1", false);
+    wp_enqueue_script("gsap", get_template_directory_uri() . "/assets/js/gsap.min.js", array(), "3.11.1", false);
+    wp_enqueue_script("ScrollTrigger", get_template_directory_uri() . "/assets/js/ScrollTrigger.min.js", array(), "3.11.1", false);
     wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.min.css", array(), filemtime(get_theme_file_path("assets/css/style.min.css")), "all");
     //wp_enqueue_script("swiper", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js", array(), "8.4.7", true);
     wp_enqueue_script("drawer", get_template_directory_uri() . "/assets/js/drawer.min.js", array("jquery"), filemtime(get_theme_file_path("assets/js/drawer.js")), true);
@@ -127,16 +127,12 @@ function my_get_tag_items($id = 0)
  */
 function my_posts_search($search, $wp_query)
 {
-
     // 検索結果ページ・メインクエリ・管理画面以外の3つの条件が揃った場合
     if ($wp_query->is_search() && $wp_query->is_main_query() && !is_admin()) {
-
         // 検索結果を投稿タイプに絞る
         $search .= " AND post_type = 'post' ";
-
         return $search;
     }
-
     return $search;
 }
 add_filter('posts_search', 'my_posts_search', 10, 2);
@@ -201,3 +197,17 @@ function init_sessions()
 }
 add_action('init', 'init_sessions');
 */
+
+//画像の挿入
+function get_image_html($image_url, $alt_text)
+{
+    // 画像のソースURLをesc_url関数を使ってエスケープします
+    $image_src = esc_url(get_template_directory_uri() . $image_url);
+
+    // alt属性のテキストをesc_attr関数を使ってエスケープします
+    $alt_text = esc_attr($alt_text);
+
+    // 画像とテキストのHTMLを組み合わせます
+    $image_html = '<img src="' . $image_src . '" alt="' . $alt_text . '" />';
+    return $image_html;
+}

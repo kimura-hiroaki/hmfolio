@@ -2,19 +2,19 @@
 
 .p-about {
     position: relative;
+    overflow: hidden;
     background-color: #ffffff;
 
-    &::after {
+    &_bg {
         position: absolute;
-        content: "Coder";
-        bottom: -27rem;
-        left: 50%;
+        content: "";
+        bottom: -11rem;
+        right: -1rem;
         font-size: 300px;
         font-weight: 700;
         color: #ffffff;
         -webkit-text-stroke: 5px #CCCCCC;
-        transform: translate(-50%, -50%);
-        z-index: -1;
+        z-index: 0;
     }
 
     &__content {
@@ -44,6 +44,15 @@
         &__introduction {
             margin-top: 20px;
             padding-left: 0.5rem;
+        }
+
+        &__introduction2 {
+            margin-top: 18px;
+            padding-left: 0.5rem;
+
+            span {
+                font-weight: 700;
+            }
         }
 
         &__info {

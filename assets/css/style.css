@@ -322,7 +322,7 @@ a {
 	border: 1px solid yellow;
 	border-radius: 20px;
 	background-color: yellow;
-	box-shadow: 0 5px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 5px 0 rgba(0, 0, 0, 0.15);
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 54px;
@@ -547,17 +547,17 @@ a {
 
 .p-about {
 	position: relative;
+	overflow: hidden;
 	background-color: #ffffff;
 }
 
-.p-about::after {
-	z-index: -1;
+.p-about_bg {
+	z-index: 0;
 	position: absolute;
-	bottom: -27rem;
-	left: 50%;
+	right: -1rem;
+	bottom: -11rem;
 	-webkit-text-stroke: 5px #CCCCCC;
-	transform: translate(-50%, -50%);
-	content: "Coder";
+	content: "";
 	color: #ffffff;
 	font-weight: 700;
 	font-size: 300px;
@@ -584,6 +584,15 @@ a {
 .p-about__content__introduction {
 	margin-top: 20px;
 	padding-left: 0.5rem;
+}
+
+.p-about__content__introduction2 {
+	margin-top: 18px;
+	padding-left: 0.5rem;
+}
+
+.p-about__content__introduction2 span {
+	font-weight: 700;
 }
 
 .p-about__content__info {
@@ -682,7 +691,6 @@ a {
 }
 
 .p-work__note span {
-	color: #0000FF;
 	font-weight: 700;
 }
 
@@ -1289,6 +1297,14 @@ label[for=your-question-5] .mwform-checkbox-field-text::after {
 
 .u-text--black {
 	color: #1A1A1A;
+}
+
+.u-accent {
+	color: #0000FF;
+}
+
+.u-underline {
+	text-decoration: underline;
 }
 
 @media screen and (max-width: 1279px) {

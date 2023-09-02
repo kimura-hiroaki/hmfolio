@@ -29,7 +29,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="p-topview__button"><a href="<?php echo home_url('/contact'); ?>">お問い合わせはこちら</a></div>
+            <div class="p-topview__button"><a href="<?php echo esc_url(home_url('/contact')); ?>">お問い合わせはこちら</a></div>
         </div>
         <a class="c-scroll u-isSP js-scroll" href="#about">
             <span></span>
@@ -37,6 +37,7 @@
     </section>
     <!-- about me -->
     <section id="about" class="l-section p-about">
+        <div class="p-about_bg">Coder</div>
         <div class="l-inner js-fadein">
             <div class="c-section__title p-about__title">
                 <div class="p-about__title--main">
@@ -46,16 +47,18 @@
             </div>
             <div class="p-about__content__wrap">
                 <div class="p-about__image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/img-directors01.png" alt="director">
+                    <?php echo get_image_html('/assets/img/img-me.jpg', 'my_fhoto'); ?>
                 </div>
                 <div class="p-about__content">
                     <div class="p-about__content__name">キムラ ヒロアキ</div>
                     <div class="p-about__content__introduction">
                         痒い所に手が届くコーダーを目指しています。<br>
                         そのために、align with you.（ お客様に寄り添う ）<br>
-                        お客様に誠実に対応することが大切と考えています。<br>
-                        HM-WebとはHMは夫婦の頭文字を取ったものです。<br>
-                        家族のために頑張るという意味を込めて命名しています。<br>
+                        お客様に誠実に対応することが大切と考えています。
+                    </div>
+                    <div class="p-about__content__introduction2">
+                        <span>HM-Web</span>とは<br>HMは夫婦の頭文字を取ったものです。<br>
+                        家族のために頑張るという意味を込めて屋号にしています。<br>
                     </div>
                     <div class="p-about__content__info">
                         <div class="p-about__content__info__title">&lt; info &gt;</div>
@@ -91,108 +94,73 @@
                 <div class="p-work__title--sub c-section__title--sub">制作実績</div>
             </div>
             <div class="p-work__card__wrap">
-                <div class="p-work__card">
-                    <a href="">
-                        <div class="p-work__card__content">
-                            <figure class="p-work__card__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/my_portfolio.jpg" alt="Portfolio1">
-                            </figure>
-                            <div class="p-work__body">
-                                <dl class="p-work__info">
-                                    <div class="p-work__info-item">
-                                        <dt>制作期間：</dt>
-                                        <dd>7日間</dd>
+                <?php for ($i = 1; $i < 4; $i++) : ?>
+                    <?php $portfolio_name = "portfolio_{$i}"; ?>
+                    <?php if (get_field($portfolio_name)) : ?>
+                        <?php
+                        $portfolio_date = get_field($portfolio_name);
+                        $portfolio_image = $portfolio_date["image"];
+                        $portfolio_url = $portfolio_date["url"];
+                        $portfolio_period = $portfolio_date["period"];
+                        $portfolio_page = $portfolio_date["page"];
+                        $portfolio_content = $portfolio_date["content"];
+                        $portfolio_tech = $portfolio_date["tech"];
+                        $portfolio_info = $portfolio_date["info"];
+                        ?>
+                        <div class="p-work__card">
+                            <?php if ($portfolio_url != "") {
+                                $add_target = "_blank";
+                            } else {
+                                $add_target = "";
+                                $portfolio_url = "#";
+                            }
+                            ?>
+                            <a href="<?php echo esc_url($portfolio_url); ?>" target="<?php echo $add_target; ?>">
+                                <div class="p-work__card__content">
+                                    <figure class="p-work__card__image">
+                                        <img src="<?php echo esc_url($portfolio_image); ?>" alt="portfolio_image" />
+                                    </figure>
+                                    <div class="p-work__body">
+                                        <dl class="p-work__info">
+                                            <div class="p-work__info-item">
+                                                <dt>制作期間：</dt>
+                                                <dd><?php echo $portfolio_period; ?></dd>
+                                            </div>
+                                            <div class="p-work__info-item">
+                                                <dt>対応内容：</dt>
+                                                <dd><?php echo $portfolio_content; ?></dd>
+                                            </div>
+                                            <div class="p-work__info-item">
+                                                <dt>ページ数：</dt>
+                                                <dd><?php echo $portfolio_page; ?>ページ</dd>
+                                            </div>
+                                            <div class="p-work__info-item">
+                                                <dt>利用技術：</dt>
+                                                <dd><?php echo $portfolio_tech; ?></dd>
+                                            </div>
+                                            <div class="p-work__info-item">
+                                                <dt>特徴　　：</dt>
+                                                <dd><?php echo $portfolio_info; ?></dd>
+                                            </div>
+                                        </dl>
                                     </div>
-                                    <div class="p-work__info-item">
-                                        <dt>対応内容：</dt>
-                                        <dd>コーディング</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>ページ数：</dt>
-                                        <dd>1ページ</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>利用技術：</dt>
-                                        <dd>HTML, CSS, JavaScript, JQuery</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>特徴　　：</dt>
-                                        <dd>デザインカンプからのコーディングを行いました。デザインを再現することを重視し、ピクセルパーフェクトを意識しております。</dd>
-                                    </div>
-                                </dl>
-                            </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="p-work__card">
-                    <a href="">
-                        <div class="p-work__card__content">
-                            <figure class="p-work__card__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/my_portfolio.jpg" alt="Portfolio1">
-                            </figure>
-                            <div class="p-work__body">
-                                <dl class="p-work__info">
-                                    <div class="p-work__info-item">
-                                        <dt>制作期間：</dt>
-                                        <dd>7日間</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>対応内容：</dt>
-                                        <dd>コーディング</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>ページ数：</dt>
-                                        <dd>1ページ</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>利用技術：</dt>
-                                        <dd>HTML, CSS, JavaScript, JQuery</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>特徴　　：</dt>
-                                        <dd>デザインカンプからのコーディングを行いました。デザインを再現することを重視し、ピクセルパーフェクトを意識しております。</dd>
-                                    </div>
-                                </dl>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="p-work__card">
-                    <a href="">
-                        <div class="p-work__card__content">
-                            <figure class="p-work__card__image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/my_portfolio.jpg" alt="Portfolio1">
-                            </figure>
-                            <div class="p-work__body">
-                                <dl class="p-work__info">
-                                    <div class="p-work__info-item">
-                                        <dt>制作期間：</dt>
-                                        <dd>7日間</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>対応内容：</dt>
-                                        <dd>コーディング</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>ページ数：</dt>
-                                        <dd>1ページ</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>利用技術：</dt>
-                                        <dd>HTML, CSS, JavaScript, JQuery</dd>
-                                    </div>
-                                    <div class="p-work__info-item">
-                                        <dt>特徴：</dt>
-                                        <dd>デザインカンプからのコーディングを行いました。デザインを再現することを重視し、ピクセルパーフェクトを意識しております。</dd>
-                                    </div>
-                                </dl>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </div>
             <div class="p-work__note__wrapper">
-                <p class="p-work__note">※上記ポートフォリオにはBasic認証が設定されております。閲覧時はユーザー名、パスワード欄に<span class="u-accent">「demo」</span>とご入力ください。</p>
+                <p class="p-work__note">
+                    ※上記ポートフォリオにはBasic認証が設定されております。閲覧時はユーザー名、パスワード欄に
+                    <span class="u-accent">「demo」</span>
+                    とご入力ください。
+                </p>
+                <p class="p-work__note">※上記ポートフォリオのコードは
+                    <a href="https://github.com/kimura-hiroaki" target="_blank"><span class="u-accent u-underline">
+                            Git
+                        </span></a>に掲載しています。
+                </p>
             </div>
         </div>
     </section>
@@ -298,7 +266,7 @@
             </p>
             <div class="p-inquiry__icon">
                 <div class="p-inquiry__image">
-                    <a href="<?php echo home_url('/contact'); ?>">
+                    <a href="<?php echo esc_url(home_url('/contact')); ?>">
                         <div>
                             <i class="fa-regular fa-envelope"></i>
                         </div>
